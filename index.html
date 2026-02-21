@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Chips to China</title>
+    <meta name="description" content="Amplifying the case against supplying China with advanced AI chips.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --white: #e8e4e0;
+            --white-dim: #9a9590;
+            --accent: #c4453a;
+            --bg: #0a0a0a;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--white);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 300;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1.5rem;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 720px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3.5rem;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .rule {
+            width: 48px;
+            height: 1px;
+            background: var(--accent);
+        }
+
+        blockquote {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 400;
+            line-height: 1.85;
+            color: var(--white);
+            text-align: left;
+            letter-spacing: 0.01em;
+            position: relative;
+        }
+
+        blockquote::before {
+            content: '\201C';
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 5rem;
+            color: var(--accent);
+            position: absolute;
+            top: -2rem;
+            left: -0.15rem;
+            line-height: 1;
+            opacity: 0.7;
+        }
+
+        .attribution {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            font-size: 0.875rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+            margin-top: 1.5rem;
+            display: block;
+        }
+
+        .site-name {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            font-size: 1.1rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--white);
+        }
+
+        .coming-soon {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 300;
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+        }
+
+        @media (min-width: 600px) {
+            body {
+                padding: 4rem 3rem;
+            }
+
+            blockquote {
+                font-size: 1.45rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            blockquote {
+                font-size: 1.1rem;
+                line-height: 1.75;
+            }
+
+            blockquote::before {
+                font-size: 3.5rem;
+                top: -1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <blockquote>
+            How do we defend against this wide range of autocratic tools and potential threat actors?&nbsp;… First, we should absolutely not be selling chips, chip-making tools, or datacenters to the CCP. Chips and chip-making tools are the single greatest bottleneck to powerful AI, and blocking them is a simple but extremely effective measure, perhaps the most important single action we can take. It makes no sense to sell the CCP the tools with which to build an AI totalitarian state and possibly conquer us militarily. A number of complicated arguments are made to justify such sales, such as the idea that "spreading our tech stack around the world" allows "America to win" in some general, unspecified economic battle. In my view, this is like selling nuclear weapons to North Korea and then bragging that the missile casings are made by Boeing and so the US is "winning." China is several years behind the US in their ability to produce frontier chips in quantity, and the critical period for building the country of geniuses in a datacenter is very likely to be within those next several years. There is no reason to give a giant boost to their AI industry during this critical period.
+            <span class="attribution">— Dario Amodei</span>
+        </blockquote>
+
+        <div class="rule"></div>
+
+        <div class="site-name">nochipstochina.com</div>
+
+        <div class="coming-soon">More coming soon</div>
+    </div>
+</body>
+</html>
