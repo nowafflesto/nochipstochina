@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Case — No Chips to China</title>
+    <meta name="description" content="Why the United States must stop exporting advanced semiconductors and chip-making tools to China. The detailed argument for strict AI hardware export controls.">
+    <meta property="og:title" content="The Case — No Chips to China">
+    <meta property="og:description" content="Advanced chips are the bottleneck to powerful AI. Here's why we must stop exporting them to the CCP.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nochipstochina.com/the-case">
+    <link rel="canonical" href="https://nochipstochina.com/the-case">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --white: #e8e4e0; --white-bright: #f5f2ef; --white-dim: #9a9590;
+            --white-faint: #5a5550; --accent: #c4453a; --accent-hover: #d95549;
+            --bg: #0a0a0a; --bg-raised: #131313; --bg-subtle: #0f0f0f;
+        }
+        html { font-size: 16px; scroll-behavior: smooth; }
+        body {
+            background: var(--bg); color: var(--white); font-family: 'Outfit', sans-serif;
+            font-weight: 300; line-height: 1.6; -webkit-font-smoothing: antialiased;
+        }
+
+        /* NAV */
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,10,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .nav-inner { max-width: 1100px; margin: 0 auto; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { font-weight: 500; font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white); text-decoration: none; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { font-size: 0.8rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white-dim); text-decoration: none; transition: color 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--white); }
+        .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+        .hamburger span { width: 22px; height: 1.5px; background: var(--white); }
+        .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(10,10,10,0.98); z-index: 99; flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu a { font-size: 1.1rem; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white-dim); text-decoration: none; }
+        .mobile-close { position: absolute; top: 1.1rem; right: 2rem; background: none; border: none; color: var(--white); font-size: 1.8rem; cursor: pointer; font-weight: 300; }
+
+        /* CONTENT */
+        .page-header { padding: 10rem 2rem 4rem; text-align: center; }
+        .page-label { font-size: 0.7rem; font-weight: 400; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
+        h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 500; line-height: 1.2; color: var(--white-bright); margin-bottom: 1rem; }
+        .page-intro { font-size: 1.1rem; color: var(--white-dim); max-width: 620px; margin: 0 auto; line-height: 1.75; }
+
+        .divider { display: flex; justify-content: center; padding: 0; }
+        .rule { width: 48px; height: 1px; background: var(--accent); }
+
+        .content-section { padding: 4rem 2rem; }
+        .content-inner { max-width: 720px; margin: 0 auto; }
+
+        h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.5rem, 3.5vw, 2rem); font-weight: 500; line-height: 1.3; color: var(--white-bright); margin-bottom: 1.25rem; }
+        h3 { font-family: 'Outfit', sans-serif; font-size: 1rem; font-weight: 500; color: var(--white-bright); margin-bottom: 0.75rem; letter-spacing: 0.02em; }
+
+        .content-inner p { font-size: 1.05rem; line-height: 1.85; color: var(--white-dim); margin-bottom: 1.5rem; }
+        .content-inner p:last-child { margin-bottom: 0; }
+
+        .content-section.alt { background: var(--bg-subtle); }
+
+        .pullquote {
+            font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.4rem; font-style: italic;
+            color: var(--white); line-height: 1.7; border-left: 2px solid var(--accent);
+            padding-left: 1.5rem; margin: 2.5rem 0;
+        }
+
+        .section-number {
+            font-size: 0.7rem; font-weight: 400; letter-spacing: 0.25em; text-transform: uppercase;
+            color: var(--accent); margin-bottom: 1.5rem; display: block;
+        }
+
+        /* CTA BANNER */
+        .cta-banner { padding: 5rem 2rem; text-align: center; }
+        .cta-banner h2 { margin-bottom: 1rem; }
+        .cta-sub { font-size: 1rem; color: var(--white-dim); margin-bottom: 2rem; }
+        .cta-btn { display: inline-block; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--white); border: 1px solid var(--accent); padding: 0.9rem 2.2rem; text-decoration: none; transition: all 0.25s; }
+        .cta-btn:hover { background: var(--accent); color: var(--white-bright); }
+
+        /* FOOTER */
+        footer { border-top: 1px solid rgba(255,255,255,0.05); padding: 3rem 2rem; text-align: center; }
+        .footer-inner { max-width: 1100px; margin: 0 auto; }
+        .footer-logo { font-weight: 500; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white-dim); margin-bottom: 1rem; }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; list-style: none; margin-bottom: 1.5rem; }
+        .footer-links a { font-size: 0.75rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white-faint); text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--white); }
+        .footer-copy { font-size: 0.7rem; color: var(--white-faint); letter-spacing: 0.05em; }
+
+        @media (max-width: 700px) {
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .page-header { padding: 8rem 1.5rem 3rem; }
+            .content-section { padding: 3rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">No Chips to China</a>
+            <ul class="nav-links">
+                <li><a href="/the-case" class="active">The Case</a></li>
+                <li><a href="/in-the-news">In the News</a></li>
+                <li><a href="/take-action">Take Action</a></li>
+                <li><a href="/shop">Shop</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+            <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.add('open')" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="mobile-menu">
+        <button class="mobile-close" onclick="document.querySelector('.mobile-menu').classList.remove('open')" aria-label="Close menu">&times;</button>
+        <a href="/">Home</a><a href="/the-case">The Case</a><a href="/in-the-news">In the News</a>
+        <a href="/take-action">Take Action</a><a href="/shop">Shop</a><a href="/contact">Contact</a>
+    </div>
+
+    <div class="page-header">
+        <div class="page-label">The Case</div>
+        <h1>Why Export Controls on Advanced Chips Are a National Security Imperative</h1>
+        <p class="page-intro">The argument is not complicated. It just requires taking the threat seriously.</p>
+    </div>
+
+    <div class="divider"><div class="rule"></div></div>
+
+    <!-- SECTION 1 -->
+    <div class="content-section">
+        <div class="content-inner">
+            <span class="section-number">01 — The Technology</span>
+            <h2>Chips Are the Bottleneck</h2>
+            <p>Artificial intelligence runs on semiconductors. The models that power frontier AI — the systems capable of scientific reasoning, strategic planning, and autonomous decision-making — require massive quantities of advanced chips to train and operate. Without these chips, the models cannot be built.</p>
+            <p>This is not a theoretical dependency. It is the single most binding constraint on AI development today. The companies and nations that have access to cutting-edge semiconductors can build frontier AI. Those that don't, can't. No amount of algorithmic cleverness or software innovation fully compensates for a shortage of compute.</p>
+            <p>This means chips are not just a commercial product. They are a strategic resource — arguably the most consequential strategic resource of the 21st century.</p>
+        </div>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div class="content-section alt">
+        <div class="content-inner">
+            <span class="section-number">02 — The Advantage</span>
+            <h2>America's Lead Is Real — But Fragile</h2>
+            <p>The United States and its allies currently dominate the semiconductor supply chain. The most advanced chips in the world are designed by American companies and manufactured using equipment that is overwhelmingly produced by a small number of firms in the U.S., the Netherlands, and Japan.</p>
+            <p>China, despite decades of investment, remains several years behind in its ability to manufacture frontier-grade chips at scale. This gap is one of the most important strategic advantages the democratic world holds.</p>
+            <div class="pullquote">The lead exists today. There is no guarantee it will exist in five years. The decisions we make right now determine whether it holds.</div>
+            <p>But a lead is only an advantage if you protect it. Every advanced chip or piece of lithography equipment that reaches the Chinese semiconductor ecosystem helps close the gap — not on a theoretical timeline, but on the timeline that matters most: the next several years, during which the most powerful AI systems in history will be built.</p>
+        </div>
+    </div>
+
+    <!-- SECTION 3 -->
+    <div class="content-section">
+        <div class="content-inner">
+            <span class="section-number">03 — The Threat</span>
+            <h2>What the CCP Will Do With Frontier AI</h2>
+            <p>This is not a question of speculation. The Chinese Communist Party has published its intentions. AI is central to its military modernization strategy, its domestic surveillance apparatus, and its broader ambition to reshape the international order.</p>
+            <p>Frontier AI in the hands of the CCP means more effective tools for mass surveillance and social control at home. It means autonomous weapons systems and AI-enhanced military capabilities. It means sophisticated information warfare and influence operations targeting democratic societies. And it means economic coercion backed by AI-driven industrial capacity.</p>
+            <p>These are not fringe concerns. They are the stated priorities of China's national strategy, backed by enormous and growing investment.</p>
+        </div>
+    </div>
+
+    <!-- SECTION 4 -->
+    <div class="content-section alt">
+        <div class="content-inner">
+            <span class="section-number">04 — The Bad Arguments</span>
+            <h2>Why the Case for Selling Doesn't Hold Up</h2>
+            <p>Defenders of continued chip exports to China typically make some version of the following arguments. None of them withstand scrutiny.</p>
+
+            <h3>"If we don't sell, someone else will."</h3>
+            <p>The most advanced chip-making tools are produced by a very small number of companies in allied nations. The U.S. has significant leverage over these supply chains. When we coordinate with allies — as we have begun to do — the "someone else" argument collapses. This is a chokepoint we actually control.</p>
+
+            <h3>"Engagement promotes stability."</h3>
+            <p>This argument made more sense in 2005 than it does today. The evidence of the last two decades shows that economic engagement with China has not moderated the CCP's behavior. It has funded it. Selling strategic technology to an adversary is not engagement — it is subsidy.</p>
+
+            <h3>"It hurts American companies."</h3>
+            <p>There are real short-term costs to export controls, and they should be taken seriously. But the alternative — allowing an authoritarian rival to achieve parity in the most transformative technology of our time — imposes costs that are orders of magnitude greater. National security sometimes requires economic sacrifice. This is one of those times.</p>
+
+            <h3>"Spreading our tech stack means America wins."</h3>
+            <p>As Dario Amodei put it: this is like selling nuclear weapons to North Korea and bragging that the missile casings are made by Boeing. Market share is meaningless if the technology you're selling is used to undermine your own security.</p>
+        </div>
+    </div>
+
+    <!-- SECTION 5 -->
+    <div class="content-section">
+        <div class="content-inner">
+            <span class="section-number">05 — The Window</span>
+            <h2>The Critical Period Is Now</h2>
+            <p>The next several years will determine which nations and systems of government shape the trajectory of artificial intelligence. The models being built today and in the near future will be the most powerful AI systems ever created — and the infrastructure decisions being made right now will determine who has access to them.</p>
+            <p>China is several years behind. That gap is our margin of safety. But it is not permanent, and it is not self-sustaining. It only holds if we stop actively undermining it.</p>
+            <p>The policy is straightforward: do not sell advanced chips, chip-making tools, or datacenter infrastructure to the CCP. Enforce the controls we have. Coordinate with allies. Close loopholes. And do it now, while the window is still open.</p>
+        </div>
+    </div>
+
+    <div class="divider"><div class="rule"></div></div>
+
+    <div class="cta-banner">
+        <h2>This is not a partisan issue</h2>
+        <p class="cta-sub">It's a question of whether we take the threat seriously enough to act. Get involved.</p>
+        <a href="/take-action" class="cta-btn">Take action</a>
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">nochipstochina.com</div>
+            <ul class="footer-links">
+                <li><a href="/the-case">The Case</a></li>
+                <li><a href="/in-the-news">In the News</a></li>
+                <li><a href="/take-action">Take Action</a></li>
+                <li><a href="/shop">Shop</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+            <div class="footer-copy">&copy; 2026 nochipstochina.com. All rights reserved.</div>
+        </div>
+    </footer>
+
+</body>
+</html>

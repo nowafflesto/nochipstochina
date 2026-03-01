@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>No Chips to China</title>
-    <meta name="description" content="Amplifying the case against supplying China with advanced AI chips.">
+    <title>No Chips to China — Stop Exporting AI Power to Authoritarian Regimes</title>
+    <meta name="description" content="The United States should not sell advanced chips, chip-making tools, or datacenter technology to the Chinese Communist Party. The case for export controls on AI hardware.">
+    <meta property="og:title" content="No Chips to China">
+    <meta property="og:description" content="The United States should not sell advanced chips or AI infrastructure to the CCP. Here's why — and what you can do about it.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nochipstochina.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="No Chips to China">
+    <meta name="twitter:description" content="The United States should not sell advanced chips or AI infrastructure to the CCP. Here's why — and what you can do about it.">
+    <link rel="canonical" href="https://nochipstochina.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after {
             margin: 0;
@@ -17,13 +25,19 @@
 
         :root {
             --white: #e8e4e0;
+            --white-bright: #f5f2ef;
             --white-dim: #9a9590;
+            --white-faint: #5a5550;
             --accent: #c4453a;
+            --accent-hover: #d95549;
             --bg: #0a0a0a;
+            --bg-raised: #131313;
+            --bg-subtle: #0f0f0f;
         }
 
         html {
             font-size: 16px;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -31,30 +45,205 @@
             color: var(--white);
             font-family: 'Outfit', sans-serif;
             font-weight: 300;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 3rem 1.5rem;
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
 
-        .container {
-            max-width: 720px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 3.5rem;
-            animation: fadeIn 1.2s ease-out;
+        /* ---- NAV ---- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(10, 10, 10, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(16px); }
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.8rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            width: 22px;
+            height: 1.5px;
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.98);
+            z-index: 99;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2.5rem;
+        }
+
+        .mobile-menu.open {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--white);
+        }
+
+        .mobile-close {
+            position: absolute;
+            top: 1.1rem;
+            right: 2rem;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.8rem;
+            cursor: pointer;
+            font-weight: 300;
+        }
+
+        /* ---- SECTIONS ---- */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .section-inner {
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        /* ---- HERO ---- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 5rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeUp 1s ease-out;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-label {
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: clamp(2.4rem, 6vw, 4rem);
+            font-weight: 500;
+            line-height: 1.2;
+            color: var(--white-bright);
+            margin-bottom: 1.75rem;
+            letter-spacing: -0.01em;
+        }
+
+        .hero-sub {
+            font-size: 1.15rem;
+            font-weight: 300;
+            line-height: 1.75;
+            color: var(--white-dim);
+            max-width: 620px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--white);
+            border: 1px solid var(--accent);
+            padding: 0.9rem 2.2rem;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .hero-cta:hover {
+            background: var(--accent);
+            color: var(--white-bright);
+        }
+
+        /* ---- DIVIDER ---- */
+        .divider {
+            display: flex;
+            justify-content: center;
+            padding: 0;
         }
 
         .rule {
@@ -63,15 +252,80 @@
             background: var(--accent);
         }
 
+        /* ---- WHY IT MATTERS ---- */
+        .why {
+            background: var(--bg-subtle);
+        }
+
+        .section-label {
+            font-size: 0.7rem;
+            font-weight: 400;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: clamp(1.6rem, 4vw, 2.2rem);
+            font-weight: 500;
+            line-height: 1.3;
+            color: var(--white-bright);
+            margin-bottom: 1.5rem;
+        }
+
+        .why-text p {
+            font-size: 1.05rem;
+            line-height: 1.85;
+            color: var(--white-dim);
+            margin-bottom: 1.25rem;
+        }
+
+        .why-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .why-points {
+            margin-top: 2.5rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .point {
+            border-left: 1px solid var(--accent);
+            padding-left: 1.5rem;
+        }
+
+        .point-title {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--white-bright);
+            margin-bottom: 0.4rem;
+        }
+
+        .point-desc {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--white-dim);
+        }
+
+        /* ---- QUOTE ---- */
+        .quote-section {
+            background: var(--bg-raised);
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
         blockquote {
             font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 400;
             line-height: 1.85;
             color: var(--white);
-            text-align: left;
-            letter-spacing: 0.01em;
             position: relative;
+            padding-left: 0;
         }
 
         blockquote::before {
@@ -83,13 +337,13 @@
             top: -2rem;
             left: -0.15rem;
             line-height: 1;
-            opacity: 0.7;
+            opacity: 0.6;
         }
 
         .attribution {
             font-family: 'Outfit', sans-serif;
             font-weight: 400;
-            font-size: 0.875rem;
+            font-size: 0.85rem;
             letter-spacing: 0.12em;
             text-transform: uppercase;
             color: var(--white-dim);
@@ -97,38 +351,186 @@
             display: block;
         }
 
-        .site-name {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 500;
-            font-size: 1.1rem;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            color: var(--white);
-        }
-
-        .coming-soon {
+        .attribution-sub {
             font-family: 'Outfit', sans-serif;
             font-weight: 300;
+            font-size: 0.78rem;
+            letter-spacing: 0.05em;
+            color: var(--white-faint);
+            margin-top: 0.3rem;
+            display: block;
+            font-style: italic;
+        }
+
+        /* ---- SIGNUP ---- */
+        .signup {
+            text-align: center;
+        }
+
+        .signup h2 {
+            margin-bottom: 0.75rem;
+        }
+
+        .signup-sub {
+            font-size: 1rem;
+            color: var(--white-dim);
+            margin-bottom: 2.5rem;
+        }
+
+        .signup-form {
+            display: flex;
+            gap: 0;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .signup-form input[type="email"] {
+            flex: 1;
+            padding: 0.85rem 1.2rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 300;
+            background: var(--bg-raised);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-right: none;
+            color: var(--white);
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .signup-form input[type="email"]::placeholder {
+            color: var(--white-faint);
+        }
+
+        .signup-form input[type="email"]:focus {
+            border-color: var(--accent);
+        }
+
+        .signup-form button {
+            padding: 0.85rem 1.8rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            background: var(--accent);
+            color: var(--white-bright);
+            border: 1px solid var(--accent);
+            cursor: pointer;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+
+        .signup-form button:hover {
+            background: var(--accent-hover);
+            border-color: var(--accent-hover);
+        }
+
+        .signup-note {
+            font-size: 0.75rem;
+            color: var(--white-faint);
+            margin-top: 1rem;
+        }
+
+        /* ---- FOOTER ---- */
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-weight: 500;
             font-size: 0.8rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
             color: var(--white-dim);
+            margin-bottom: 1rem;
         }
 
-        @media (min-width: 600px) {
-            body {
-                padding: 4rem 3rem;
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--white-faint);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-copy {
+            font-size: 0.7rem;
+            color: var(--white-faint);
+            letter-spacing: 0.05em;
+        }
+
+        /* ---- RESPONSIVE ---- */
+        @media (min-width: 700px) {
+            .why-points {
+                grid-template-columns: 1fr 1fr;
             }
 
             blockquote {
-                font-size: 1.45rem;
+                font-size: 1.35rem;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .hero {
+                padding-top: 4rem;
+            }
+
+            .signup-form {
+                flex-direction: column;
+            }
+
+            .signup-form input[type="email"] {
+                border-right: 1px solid rgba(255, 255, 255, 0.1);
+                border-bottom: none;
+            }
+
+            .signup-form input[type="email"]:focus {
+                border-color: var(--accent);
             }
         }
 
         @media (max-width: 400px) {
+            h1 {
+                font-size: 2rem;
+            }
+
             blockquote {
-                font-size: 1.1rem;
-                line-height: 1.75;
+                font-size: 1.05rem;
             }
 
             blockquote::before {
@@ -139,17 +541,123 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <blockquote>
-            How do we defend against this wide range of autocratic tools and potential threat actors?&nbsp;… First, we should absolutely not be selling chips, chip-making tools, or datacenters to the CCP. Chips and chip-making tools are the single greatest bottleneck to powerful AI, and blocking them is a simple but extremely effective measure, perhaps the most important single action we can take. It makes no sense to sell the CCP the tools with which to build an AI totalitarian state and possibly conquer us militarily. A number of complicated arguments are made to justify such sales, such as the idea that "spreading our tech stack around the world" allows "America to win" in some general, unspecified economic battle. In my view, this is like selling nuclear weapons to North Korea and then bragging that the missile casings are made by Boeing and so the US is "winning." China is several years behind the US in their ability to produce frontier chips in quantity, and the critical period for building the country of geniuses in a datacenter is very likely to be within those next several years. There is no reason to give a giant boost to their AI industry during this critical period.
-            <span class="attribution">— Dario Amodei</span>
-        </blockquote>
 
-        <div class="rule"></div>
+    <!-- NAV -->
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">No Chips to China</a>
+            <ul class="nav-links">
+                <li><a href="/the-case">The Case</a></li>
+                <li><a href="/in-the-news">In the News</a></li>
+                <li><a href="/take-action">Take Action</a></li>
+                <li><a href="/shop">Shop</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+            <button class="hamburger" onclick="document.querySelector('.mobile-menu').classList.add('open')" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
 
-        <div class="site-name">nochipstochina.com</div>
-
-        <div class="coming-soon">More coming soon</div>
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu">
+        <button class="mobile-close" onclick="document.querySelector('.mobile-menu').classList.remove('open')" aria-label="Close menu">&times;</button>
+        <a href="/" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Home</a>
+        <a href="/the-case" onclick="document.querySelector('.mobile-menu').classList.remove('open')">The Case</a>
+        <a href="/in-the-news" onclick="document.querySelector('.mobile-menu').classList.remove('open')">In the News</a>
+        <a href="/take-action" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Take Action</a>
+        <a href="/shop" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Shop</a>
+        <a href="/contact" onclick="document.querySelector('.mobile-menu').classList.remove('open')">Contact</a>
     </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-label">The stakes are too high to look away</div>
+            <h1>America Should Not Sell the Tools of Its Own Defeat</h1>
+            <p class="hero-sub">Advanced semiconductors are the single greatest bottleneck to powerful AI. Every chip we export to the Chinese Communist Party accelerates their pursuit of AI-enabled authoritarianism — and narrows the window we have to stay ahead.</p>
+            <a href="#signup" class="hero-cta">Stay informed</a>
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="divider"><div class="rule"></div></div>
+
+    <!-- WHY IT MATTERS -->
+    <section class="why">
+        <div class="section-inner">
+            <div class="section-label">Why it matters</div>
+            <h2>A narrow window is closing</h2>
+            <div class="why-text">
+                <p>The Chinese government has made no secret of its ambition to lead the world in artificial intelligence by 2030. AI is not just another technology — it is a force multiplier for surveillance, military capability, and social control at a scale no authoritarian regime has ever had access to.</p>
+                <p>Today, the United States holds a critical advantage: China remains several years behind in its ability to manufacture frontier-grade chips at scale. That gap is our margin of safety. But it only holds if we stop actively undermining it by selling advanced semiconductors and chip-making equipment to the very government racing to surpass us.</p>
+                <p>This is not a trade issue. It is a national security imperative.</p>
+            </div>
+
+            <div class="why-points">
+                <div class="point">
+                    <div class="point-title">The bottleneck is real</div>
+                    <div class="point-desc">Advanced chips are the limiting factor for frontier AI development. Control the chips, and you control the pace of AI progress.</div>
+                </div>
+                <div class="point">
+                    <div class="point-title">The lead is temporary</div>
+                    <div class="point-desc">China is investing aggressively in domestic semiconductor capacity. Every chip we sell today shrinks a lead that took decades to build.</div>
+                </div>
+                <div class="point">
+                    <div class="point-title">The applications are dangerous</div>
+                    <div class="point-desc">AI-powered surveillance, autonomous weapons systems, and information warfare aren't hypothetical. They are active programs within the CCP's strategic framework.</div>
+                </div>
+                <div class="point">
+                    <div class="point-title">The arguments for selling don't hold up</div>
+                    <div class="point-desc">Claims that exporting our technology lets "America win" ignore what we're actually exporting: the capacity for an adversary to challenge us where it matters most.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="divider"><div class="rule"></div></div>
+
+    <!-- QUOTE -->
+    <section class="quote-section">
+        <div class="section-inner">
+            <div class="section-label">The case in his words</div>
+            <blockquote>
+                We should absolutely not be selling chips, chip-making tools, or datacenters to the CCP. Chips and chip-making tools are the single greatest bottleneck to powerful AI, and blocking them is a simple but extremely effective measure, perhaps the most important single action we can take. It makes no sense to sell the CCP the tools with which to build an AI totalitarian state and possibly conquer us militarily.… In my view, this is like selling nuclear weapons to North Korea and then bragging that the missile casings are made by Boeing and so the US is "winning." China is several years behind the US in their ability to produce frontier chips in quantity, and the critical period for building the country of geniuses in a datacenter is very likely to be within those next several years. There is no reason to give a giant boost to their AI industry during this critical period.
+                <span class="attribution">— Dario Amodei</span>
+                <span class="attribution-sub">CEO of Anthropic, from "Machines of Loving Grace"</span>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- SIGNUP -->
+    <section class="signup" id="signup">
+        <div class="section-inner">
+            <div class="section-label">Don't look away</div>
+            <h2>This issue needs attention, not apathy</h2>
+            <p class="signup-sub">Sign up to follow the fight over chip exports — policy updates, key developments, and ways to make your voice heard.</p>
+            <form class="signup-form" action="#" method="POST">
+                <input type="email" name="email" placeholder="Your email address" required aria-label="Email address">
+                <button type="submit">Sign up</button>
+            </form>
+            <p class="signup-note">No spam. Unsubscribe anytime.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">nochipstochina.com</div>
+            <ul class="footer-links">
+                <li><a href="/the-case">The Case</a></li>
+                <li><a href="/in-the-news">In the News</a></li>
+                <li><a href="/take-action">Take Action</a></li>
+                <li><a href="/shop">Shop</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+            <div class="footer-copy">&copy; 2026 nochipstochina.com. All rights reserved.</div>
+        </div>
+    </footer>
+
 </body>
 </html>
